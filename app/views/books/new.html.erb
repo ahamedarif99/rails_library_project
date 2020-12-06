@@ -1,0 +1,31 @@
+<h1>Add New Book</h1>
+<%= form_for :book, url: books_path do |f| %>
+	<% if @book.errors.any? %>
+		<% @book.errors.full_messages.each do |msg| %>
+			<div class="alert alert-danger"><%= msg %></div>
+		<% end %>
+	<% end %>
+	<p>	
+		<%= f.label :title %><br>
+		<%= f.text_field :title %>
+	</p>
+
+	<p>
+		<%= f.label :author %><br>
+		<%= f.text_field :author %>
+	</p>
+
+	<p>
+		<%= f.label :isbn %><br>
+		<%= f.text_field :isbn %>
+	</p>
+
+	<p>
+		<%= f.label :copies %><br>
+		<%= f.text_field :copies, :as => :number %>
+	</p>
+
+	<p>
+		<%= f.submit "Save New Book" %>
+	</p>
+<% end %>

@@ -1,0 +1,23 @@
+<h1>Search for Book</h1>
+<%= form_for @patron, html: {class: "pure-form"} do |f| %>
+	<div class="field">
+		<%= f.label :title %><br>
+		<%= f.text_field :title %>
+	</div>
+
+	<div class="field">
+		<%= f.label :author %><br>
+		<%= f.text_field :author %>
+	</div>
+
+	<div class="field">
+		<%= f.label :isbn %><br>
+		<%= f.text_field :isbn %>
+	</div>
+
+	<div class="actions">
+		<%= f.submit "Search Book", class: "pure-button pure-button-primary" %>
+	</div>
+<% end %>
+
+<p><%= link_to "back", root_path %></p>

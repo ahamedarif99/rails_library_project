@@ -1,0 +1,13 @@
+<h1>View Reviews</h1>  
+	<h2><%= @book.title %></h2>
+	<p><%= @book.author %></p>
+	<p><%= @book.isbn %></p>
+
+<h4>Reviews</h4>
+<% @book.reviews.each do |review| %>
+	<div class="well">
+		<p><strong><%= review.name %></strong>: <%= review.review %></p>
+	</div>
+<% end %>
+   
+<p><%= link_to "Home", root_path %></p>

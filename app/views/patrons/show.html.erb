@@ -1,0 +1,26 @@
+<h1>Search Results</h1>
+<p><%= link_to 'Back', new_patron_path %></p>
+
+<% if @patron.patron_books.empty? %>
+	<p>No Books found</p>
+
+<% else %>
+	<table>
+		<tr>
+			<td>Name</td>
+			<td>Author</td>
+			<td>ISBN</td>
+			<td>Add Review</td>
+			<td>View Review</td>
+		</tr>
+	<%= @patron.patron_books.each do |book| %>
+		<tr>
+			<td><h1><%= book.title %></h1></td>
+			<td><%= book.author %></td>
+			<td><%= book.isbn %></td>
+			<td><%= link_to 'Add Review', new_book_review_path(book) %></td>
+			<td><%= link_to 'View Review', book_path(book) %></td>
+		</tr>
+	<% end %>
+	</table>
+<% end %>

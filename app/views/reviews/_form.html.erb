@@ -1,0 +1,16 @@
+<%= form_for([@book, @book.reviews.build]) do |f| %>
+	<div class="field">
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</div>
+
+	<div class="field">
+		<%= f.label :review %><br>
+		<%= f.text_field :review %>
+	</div>
+
+	<div class="actions">
+		<%= f.submit "Save Review" %>
+	</div>
+
+<% end %>
